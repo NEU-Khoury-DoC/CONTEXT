@@ -4,3 +4,26 @@ __pycache__
 secrets/
 .env
 .env.local
+
+# Local Terraform directories
+/.terraform/
+
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+
+# Sensitive variable files
+*.tfvars
+
+# Other files
+*.tfplan
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+.terraform.lock.hcl
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
