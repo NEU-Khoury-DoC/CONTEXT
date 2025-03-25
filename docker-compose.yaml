@@ -1,27 +1,29 @@
 services:
-
   app:
     build: ./app
-    container_name: front-end 
-    volumes: ['./app/src:/appcode']
+    container_name: front-end
+    volumes:
+      ["./app/src:/appcode"]
       #    restart: unless-stopped
     ports:
       - 8501:8501
 
   api:
     build: ./api
+    env_file:
+      - ./.env
     container_name: web-api
     hostname: web-api
-    volumes: ['./api:/apicode']
-      
+    volumes: ["./api:/apicode"]
+
     ports:
       - 4000:4000
 
   db:
     env_file:
-      - ./api/.env
+      - ./.env
     image: mysql:8
-    container_name: mysql_db
+    container_name: mysql-db
     volumes:
       - ./database:/docker-entrypoint-initdb.d/:ro
 
@@ -29,5 +31,3 @@ services:
       - 3200:3306
 
     restart: unless-stopped
-
-
