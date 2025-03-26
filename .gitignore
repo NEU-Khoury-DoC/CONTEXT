@@ -8,7 +8,7 @@ secrets/
 # Local Terraform directories
 /.terraform/
 ./terraform/
-./terraform/.terraform/
+terraform/.terraform/
 # Terraform state files
 terraform.tfstate
 terraform.tfstate.backup
